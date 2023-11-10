@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import useUser from "@/hook/useUser";
 
 export default function Home() {

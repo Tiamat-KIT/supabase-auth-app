@@ -7,7 +7,7 @@ declare global {
   var supabaseClient: SupabaseClient<any, 'public', any> | undefined;
 }
 
-const prisma =
+const supabaseClient =
   global.supabaseClient || createClient(supabaseUrl, supabaseAnonKey);
 
 if (process.env.NODE_ENV === 'development')

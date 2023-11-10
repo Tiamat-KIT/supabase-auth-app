@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import supabaseClient from '../type/supabase';
+import supabaseClient from '../type/supabase.d';
 
 export default function useUser() {
   const [session, setSession] = useState();
