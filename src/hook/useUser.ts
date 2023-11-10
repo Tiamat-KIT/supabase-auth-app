@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import supabaseClient from '../type/supabase';
 
-export default function userUser() {
+export default function useUser() {
   const [session, setSession] = useState();
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function userUser() {
     };
   }, []);
 
-  function signInWithGithub() {
+  function signIn() {
     supabaseClient.auth.signIn({ provider: 'email' });
   }
 
@@ -26,7 +26,7 @@ export default function userUser() {
 
   return {
     session,
-    signInWithGithub,
+    signIn,
     signOut,
   };
 }

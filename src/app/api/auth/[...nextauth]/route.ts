@@ -8,7 +8,7 @@ const GoogleSecret = process.env.GOOGLE_SECRET */
 
 const NEXTAUTH_SECRET = process.env.secret_key as string
 
-function FindCredentialUser 
+/* function FindCredentialUser 
 
 export const AuthConfig: NextAuthOptions = {
     providers: [
@@ -21,4 +21,4 @@ export const AuthConfig: NextAuthOptions = {
         strategy: "database",
         maxAge: 60*60*3
     }
-}
+} */

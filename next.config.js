@@ -17,6 +17,13 @@ const nextConfig = {
     DATABASE_URL:
       'postgresql://postgres:Tiamat0225!!@db.rnujfvxzbuakkiwvspra.supabase.co:5432/postgres',
   },
+  webpack: (config) => {
+    config.watchOptions = {
+      poll: 1000,
+      aggregateTimeout: 300,
+    };
+    return config;
+  },
 };
 
 module.exports = nextConfig;
