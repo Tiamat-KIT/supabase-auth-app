@@ -48,7 +48,7 @@ export default function Tab({Props}:{Props?: TabItem[]}) {
                     {Props.map((item,i) => {
                             return( 
                                 <li 
-                                    className="tab tab-lg tab-bordered" 
+                                    className={`tab tab-lg tab-bordered w-1/${Props.length}`}
                                     key={i} 
                                     id={`tab${i}`} 
                                     onClick={(event) => {ReactTabSelectToggle(event,Props.length)}}>                                        
