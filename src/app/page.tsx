@@ -1,15 +1,21 @@
-"use client"
-import useUser from "@/hook/useUser";
+import Container from "@/components/Container";
+import SignUpForm from "@/components/SignUpForm";
+import LoginForm from "@/components/LogInForm";
+import Tab from "@/components/Tab";
+import { TabItem } from "@/components/Tab";
 
 export default function Home() {
-    const {session,signOut,signIn} = useUser();
+    const tabItem: TabItem[] = [
+        {tabName: "SignUp",tabContent: <SignUpForm />},
+        {tabName: "LogIn",tabContent: <LoginForm />}
+    ]
     return (
-        <>
-            {session ? (
-            <button onClick={() => signOut()}>サインアウト</button>
-        ) : (
-            <button onClick={() => signIn()}>ログイン</button>
-        )}
+        <>  
+        
+            <Container>
+                <Tab Props={tabItem}/>
+            </Container>
         </>
+        
     )
 }

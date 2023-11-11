@@ -1,17 +1,17 @@
 import { createClient } from '@supabase/supabase-js';
-import { Database } from './schema';
+import { Database } from './new-supabase-Schema';
+// import { Database } from './schema';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+/* declare global {
+  var UtakataSupabaseClient: SupabaseClient<Database> | undefined;
+} */
 
-declare global {
-  var supabaseClient: SupabaseClient<Database> | undefined;
-}
+const UtakataSupabaseClient = /* global.UtakataSupabaseClient || */ createClient<Database>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL as string,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
+  );
 
-const supabaseClient =
-  global.supabaseClient || createClient(supabaseUrl, supabaseAnonKey);
+/* if (process.env.NODE_ENV === 'development')
+  global.UtakataSupabaseClient  = UtakataSupabaseClient; */
 
-if (process.env.NODE_ENV === 'development')
-  global.supabaseClient = supabaseClient;
-
-export default supabaseClient;
+export default UtakataSupabaseClient;
